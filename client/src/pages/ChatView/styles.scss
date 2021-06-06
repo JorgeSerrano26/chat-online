@@ -1,0 +1,188 @@
+$grey: #dfe1e5;
+$blue: rgb(56, 56, 255);
+$blue_hover: rgb(85, 85, 250);
+$rainbow_colors: linear-gradient(
+  125deg,
+  #ff2400,
+  #e81d1d,
+  #e8b71d,
+  #e3e81d,
+  #1de840,
+  #1ddde8,
+  #2b1de8,
+  #dd00f3,
+  #dd00f3
+);
+.chat {
+  width: 80%;
+  height: 80vh;
+  display: flex;
+  border-radius: 10px;
+  box-shadow: 0 3.4px 2.7px rgba(0, 0, 0, 0.006),
+    0 8.7px 6.9px rgba(0, 0, 0, 0.009), 0 17.7px 14.2px rgba(0, 0, 0, 0.011),
+    0 36.5px 29.2px rgba(0, 0, 0, 0.014), 0 100px 80px rgba(0, 0, 0, 0.02);
+  .chat__sidebar {
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid $grey;
+    width: 30%;
+    .sidebar-title {
+      text-align: center;
+      text-overflow: ellipsis;
+      width: 100%;
+      letter-spacing: 0.1em;
+      white-space: nowrap;
+      text-transform: uppercase;
+      position: relative;
+      &::after {
+        content: "";
+        display: inline-block;
+        margin: 0 auto;
+        top: 100%;
+        position: absolute;
+        border-radius: 24px;
+        width: 30px;
+        height: 5px;
+        left: 0;
+        right: 0;
+        background: $rainbow_colors;
+        background-size: 1800% 1800%;
+        -webkit-animation: rainbow 18s ease infinite;
+        -z-animation: rainbow 18s ease infinite;
+        -o-animation: rainbow 18s ease infinite;
+        animation: rainbow 18s ease infinite;
+      }
+    }
+    .sidebar__listusers {
+      flex: 1 1 auto;
+      overflow: scroll;
+      list-style: none;
+      padding-inline-start: 10px;
+      overflow-x: hidden;
+      .listusers__item {
+        padding: 10px;
+        text-transform: capitalize;
+        font-weight: 600;
+        line-height: normal;
+        &:before {
+          transform: translateY(-40%);
+          content: "";
+          background-color: rgb(41, 214, 41);
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+          display: inline-block;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+  .sidebar-title {
+  }
+  .chat__right {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    .chat__chatbox {
+      list-style: none;
+      flex: 1 1 auto;
+      overflow-y: auto;
+      padding-inline-start: 0px;
+      margin: 0 10px;
+      padding: 0 10px;
+      .message {
+        padding: 5px;
+        border-left: 2px solid gray;
+        margin: 10px 0px;
+        &.myMessage {
+          text-align: right;
+          border-right: 2px solid gray;
+          border-left: 0;
+        }
+        &.adminMessage {
+          text-align: center;
+          color: lightslategray;
+          border: 0;
+        }
+      }
+    }
+    .chat__send-box {
+      padding: 5px 10px;
+      form {
+        display: flex;
+        justify-content: space-between;
+        input {
+          border: 1px solid $grey;
+          border-radius: 5px;
+          outline: 0;
+          width: 75%;
+          font-size: 20px;
+          padding: 5px;
+          box-shadow: none;
+        }
+        button {
+          border: 0;
+          width: 20%;
+          background-color: $blue;
+          color: #fff;
+          border-radius: 5px;
+          outline: none;
+          &:hover {
+            cursor: pointer;
+            background-color: $blue_hover;
+          }
+          &:disabled {
+            background-color: $grey;
+            cursor: not-allowed;
+          }
+        }
+      }
+    }
+  }
+}
+
+@-webkit-keyframes rainbow {
+  0% {
+    background-position: 0% 82%;
+  }
+  50% {
+    background-position: 100% 19%;
+  }
+  100% {
+    background-position: 0% 82%;
+  }
+}
+@-moz-keyframes rainbow {
+  0% {
+    background-position: 0% 82%;
+  }
+  50% {
+    background-position: 100% 19%;
+  }
+  100% {
+    background-position: 0% 82%;
+  }
+}
+@-o-keyframes rainbow {
+  0% {
+    background-position: 0% 82%;
+  }
+  50% {
+    background-position: 100% 19%;
+  }
+  100% {
+    background-position: 0% 82%;
+  }
+}
+@keyframes rainbow {
+  0% {
+    background-position: 0% 82%;
+  }
+  50% {
+    background-position: 100% 19%;
+  }
+  100% {
+    background-position: 0% 82%;
+  }
+}
+

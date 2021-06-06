@@ -1,0 +1,38 @@
+$blue: rgb(56, 56, 255);
+$blue_hover: rgb(85, 85, 250);
+
+.login-box{
+    display: flex;
+    flex-direction: column;
+    h1{
+        text-align: center;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        input[type=text] {
+            padding: 10px;
+            border-radius: 5px;
+            outline: none;
+            border: 1px solid #c1c1c1;
+            transition: border .3s;
+            margin-bottom: 10px;
+            &:focus{
+                transition: border .3s;
+                border-color: $blue;
+            }
+        }
+        button[type=submit]{
+            color: #fff;
+            outline: none;
+            padding: 10px;
+            background-color: $blue;
+            border: none;
+            border-radius: 5px;
+            &:hover{
+                cursor: pointer;
+                background-color: $blue_hover;
+            }
+        }
+    }
+}
